@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Display</title>
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS for styling -->
+    <style>
+        .eta-box {
+            position: relative; /* Change to relative position */
+            margin-top: 20px; /* Add top margin */
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center; /* Center the content */
+        }
+
+        .eta-display {
+            font-size: 2em; /* Large font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2>Enter Coordinates and Show Route</h2>
+        <form id="coordinates-form">
+            <div class="form-group">
+                <label for="from-latitude">From Latitude:</label>
+                <input type="text" class="form-control" id="from-latitude" placeholder="Enter From Latitude">
+            </div>
+            <div class="form-group">
+                <label for="from-longitude">From Longitude:</label>
+                <input type="text" class="form-control" id="from-longitude" placeholder="Enter From Longitude">
+            </div>
+            <div class="form-group">
+                <label for="to-latitude">To Latitude:</label>
+                <input type="text" class="form-control" id="to-latitude" placeholder="Enter To Latitude">
+            </div>
+            <div class="form-group">
+                <label for="to-longitude">To Longitude:</label>
+                <input type="text" class="form-control" id="to-longitude" placeholder="Enter To Longitude">
+            </div>
+            <button type="submit" class="btn btn-primary">Show Route</button>
+        </form>
+        <div class="eta-box">
+            <div id="eta-display" class="eta-display"></div>
+        </div>
+        <div id="map-view" style="height: 600px;"></div>
+    </div>
+
+    <!-- Link to Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <script src="app.js"></script>
+</body>
+</html>
